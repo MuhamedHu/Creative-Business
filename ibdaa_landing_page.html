@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة إبداع الأعمال المحدودة</title>
+    <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Varela+Round&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #040026 0%, #040026 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: transparent;
+            backdrop-filter: none;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: transparent;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 180px;
+            height: 180px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #DE1C5C;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #DE1C5C;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 20, 25, 0.4);
+            z-index: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(74, 85, 104, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(43, 108, 176, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(45, 55, 72, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff, #ffffff, #ffffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #DE1C5C, #DE1C5C);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(74, 85, 104, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #2b6cb0;
+            border: 2px solid #2b6cb0;
+        }
+
+        .btn-secondary:hover {
+            background: #2b6cb0;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            animation: fadeInRight 1s ease-out 0.6s both;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .hero-text {
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #4a5568, #2b6cb0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* About Section */
+        .about {
+            margin-top: 200px;
+            padding-top: 200px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-visual {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(74, 85, 104, 0.1), rgba(43, 108, 176, 0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Brands Section */
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .brand-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .brand-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            overflow: hidden;
+        }
+
+        .brand-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .brand-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            background: #DE1C5C;
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            overflow: hidden;
+            border: 3px solid rgba(74, 85, 104, 0.3);
+        }
+
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .team-card .role {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .contact-card h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contact-card p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            margin-bottom: 0 !important;
+            background: rgba(0, 0, 0, 0.3);
+            margin-top: 30px;
+            padding: 80px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer .container{
+            margin-bottom: 0 !important;
+        }
+
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes rotateY {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <!-- ضيف لوجو الشركة هنا -->
+                        <img src="imgs/Logo.png" alt="شركة إبداع الأعمال">
+                        <!-- مثال: <img src="company-logo.png" alt="شركة إبداع الأعمال"> -->
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#brands">علاماتنا التجارية</a></li>
+                    <li><a href="#team">فريق العمل</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- ضيف صورتك هنا كـ background -->
+        <img src="Imgs/Hero.png" alt="Hero Background" class="hero-background">
+        <!-- مثال: <img src="hero-bg.jpg" alt="Hero Background" class="hero-background"> -->
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1> إبداع الأعمال المحدودة</h1>
+                    <p>تأسست في عام 2019 برؤية طموحة تهدف إلى الابتكار والتنوع في تقديم الخدمات والمنتجات، ضمن بيئة عمل تجمع بين الجودة والاحترافية. نجحنا في بناء هوية تجارية قوية متعددة العلامات.</p>
+                    <div class="cta-buttons">
+                        <a href="#about" class="btn btn-primary">اكتشف المزيد</a>
+                        <a href="#contact" class="btn btn-secondary">تواصل معنا</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- يمكنك إضافة عنصر إضافي هنا لو محتاج -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about fade-in" id="about">
+        <div class="container">
+            <h2 class="section-title">من نحن</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>تأسست شركة إبداع الأعمال في عام 2019 على يد الأستاذ عبد العزيز الحيمود، برؤية طموحة تهدف إلى الابتكار والتنوع في تقديم الخدمات والمنتجات، ضمن بيئة عمل تجمع بين الجودة والاحترافية.</p>
+                    
+                    <p>نجحت الشركة في بناء هوية تجارية قوية متعددة العلامات، تواكب تطلعات العملاء وتلبي احتياجات السوق المحلي بثقة وثبات.</p>
+                    
+                    <p>يعتمد نشاط الشركة على إدارة وتشغيل علامات تجارية مختلفة، كل منها تخدم قطاعًا معينًا وتلبي احتياجات محددة في السوق، مع الالتزام الدائم بالقيم التي تأسست عليها: الجودة، الابتكار، وتقديم تجربة متفوقة للعملاء.</p>
+                </div>
+                <div class="about-visual" style="background-image: url('Imgs/Company-logo.png'); background-size: cover; background-position: center;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="section fade-in" id="brands">
+        <div class="container">
+            <h2 class="section-title">علاماتنا التجارية</h2>
+            <div class="brands-grid">
+                <div class="brand-card">
+                    <div class="brand-icon">
+                        <!-- ضيف شعار July Furniture هنا -->
+                        <img src="Imgs/July.png" alt="July Furniture">
+                        <!-- مثال: <img src="july-furniture-logo.png" alt="July Furniture"> -->
+                    </div>
+                    <h3>July Furniture</h3>
+                    <p>العلامة التجارية الرئيسية في قطاع الأثاث والتصميم الداخلي العصري، تقدم حلولاً متكاملة للمنازل والمكاتب.</p>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-icon">
+                        <!-- ضيف شعار July Lamp هنا -->
+                        <img src="Imgs/Lamps.png" alt="July Lamp">
+                        <!-- مثال: <img src="july-lamp-logo.png" alt="July Lamp"> -->
+                    </div>
+                    <h3>July Lamp</h3>
+                    <p>متخصصة في وحدات الإضاءة العصرية التي تجمع بين الجمالية والعملية باستخدام تقنيات إضاءة حديثة.</p>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-icon">
+                        <!-- ضيف شعار Demaroz هنا -->
+                        <img src="Imgs/Dema.png" alt="Demaroz">
+                        <!-- مثال: <img src="demaroz-logo.png" alt="Demaroz"> -->
+                    </div>
+                    <h3>Demaroz</h3>
+                    <p>علامة راقية للأثاث الفاخر والمصمم بعناية، تتميز بالتفاصيل الدقيقة والمواد الفاخرة للباحثين عن الأناقة.</p>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-icon">
+                        <!-- ضيف شعار July Gaming هنا -->
+                        <img src="Imgs/Gaming.png" alt="July Gaming">
+                        <!-- مثال: <img src="july-gaming-logo.png" alt="July Gaming"> -->
+                    </div>
+                    <h3>July Gaming</h3>
+                    <p>أثاث مخصص لعشاق الألعاب الإلكترونية، يشمل كراسي ومكاتب مصممة لتعزيز الراحة خلال جلسات اللعب.</p>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-icon">
+                        <!-- ضيف شعار July Wall Photos هنا -->
+                        <img src="Imgs/Wall.png" alt="July Wall Photos">
+                        <!-- مثال: <img src="july-photos-logo.png" alt="July Wall Photos"> -->
+                    </div>
+                    <h3>July Wall Photos</h3>
+                    <p>ديكورات جدارية ولوحات فنية مبتكرة تضيف لمسة من الذوق والإبداع للمساحات المختلفة.</p>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-icon">
+                        <!-- ضيف شعار Ice Frutta هنا -->
+                        <img src="Imgs/Ice-Fruta.png" alt="Ice Frutta">
+                        <!-- مثال: <img src="ice-frutta-logo.png" alt="Ice Frutta"> -->
+                    </div>
+                    <h3>Ice Frutta</h3>
+                    <p>علامة تجارية متميزة في قطاع المشروبات والحلويات، تقدم عصائر طازجة وحلويات مبتكرة بجودة عالية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section fade-in" id="team">
+        <div class="container">
+            <h2 class="section-title">فريق العمل</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <!-- ضيف صورة عبد العزيز الحيمود هنا -->
+                        <img src="Imgs/Abdulaziz.png" alt="عبد العزيز الحيمود">
+                        <!-- مثال: <img src="abdulaziz-photo.jpg" alt="عبد العزيز الحيمود"> -->
+                    </div>
+                    <h3>عبد العزيز الحيمود</h3>
+                    <div class="role">الشريك المؤسس والرئيس التنفيذي</div>
+                    <p>يقود المسار العام للشركة، واضعًا الرؤية الاستراتيجية وموجّهًا كافة الجهود نحو النمو المستدام والتوسع.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <!-- ضيف صورة واصل الجراد هنا -->
+                        <img src="Imgs/Wassel.png" alt="واصل الجراد">
+                        <!-- مثال: <img src="wasel-photo.jpg" alt="واصل الجراد"> -->
+                    </div>
+                    <h3>واصل الجراد</h3>
+                    <div class="role">مساعد المدير الإداري</div>
+                    <p>يدعم العمليات الإدارية اليومية ويساهم في تنسيق الأنشطة بين الأقسام المختلفة، مع التركيز على تحسين الكفاءة التشغيلية وضمان سير العمل بسلاسة.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <!-- ضيف صورة لينا الربيع هنا -->
+                        <img src="Imgs/leena.png" alt="لينا الربيع">
+                        <!-- مثال: <img src="lina-photo.jpg" alt="لينا الربيع"> -->
+                    </div>
+                    <h3>لينا الربيع</h3>
+                    <div class="role">أخصائية تسويق</div>
+                    <p>تتولى تنفيذ الخطط التسويقية الرقمية والتقليدية، مركزة على رفع مستوى التفاعل مع العلامات التجارية.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <!-- ضيف صورة قاسم المقهوي هنا -->
+                        <img src="Imgs/Qassem.png" alt="قاسم المقهوي">
+                        <!-- مثال: <img src="qasem-photo.jpg" alt="قاسم المقهوي"> -->
+                    </div>
+                    <h3>قاسم المقهوي</h3>
+                    <div class="role">مدير تجربة العملاء</div>
+                    <p>مسؤول عن خلق تجربة مميزة ومرضية لكل عميل يتفاعل مع الشركة ومعالجة الشكاوى وتطوير الخدمة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact fade-in" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">تواصل معنا</h2>
+                <p>نحن هنا لخدمتكم ومساعدتكم في جميع استفساراتكم. تواصلوا معنا لتجربة أفضل خدماتنا وحلولنا المبتكرة.</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <span class="contact-icon">📧</span>
+                        <h3>البريد الإلكتروني</h3>
+                        <p>care@july-furniture.com</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <span class="contact-icon">📱</span>
+                        <h3>رقم الهاتف</h3>
+                        <p>0548867002</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <span class="contact-icon">📍</span>
+                        <h3>العنوان</h3>
+                        <p>Al Manar district, Abdulrhman Ibn Awf St,
+                            2nd Floor, office No 202, Dammam, Saudi Arabia</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <span class="contact-icon">🕒</span>
+                        <h3>ساعات العمل</h3>
+                        <p>الأحد - الخميس<br>8:00 ص - 6:00 م</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 شركة إبداع الأعمال المحدودة. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add hover effects to brand cards
+        document.querySelectorAll('.brand-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add click animation to buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255,255,255,0.3)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.left = e.offsetX - 10 + 'px';
+                ripple.style.top = e.offsetY - 10 + 'px';
+                ripple.style.width = '20px';
+                ripple.style.height = '20px';
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero');
+            const speed = scrolled * 0.5;
+            
+            if (parallax) {
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Typing animation for hero text
+        function typeWriter(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing animation when page loads
+        window.addEventListener('load', function() {
+            const heroTitle = document.querySelector('.hero-text h1');
+            if (heroTitle) {
+                const originalText = heroTitle.textContent;
+                typeWriter(heroTitle, originalText, 100);
+            }
+        });
+
+        // Add floating animation to brand icons
+        document.querySelectorAll('.brand-icon').forEach((icon, index) => {
+            icon.style.animationDelay = `${index * 0.2}s`;
+            icon.style.animation = 'float 3s ease-in-out infinite';
+        });
+
+        // Contact form animation (if added later)
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.team-card, .brand-card');
+            
+            elements.forEach((element, index) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.animation = `fadeInUp 0.6s ease-out ${index * 0.1}s both`;
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Add dynamic background particles
+        function createParticles() {
+            const particlesContainer = document.createElement('div');
+            particlesContainer.style.position = 'fixed';
+            particlesContainer.style.top = '0';
+            particlesContainer.style.left = '0';
+            particlesContainer.style.width = '100%';
+            particlesContainer.style.height = '100%';
+            particlesContainer.style.pointerEvents = 'none';
+            particlesContainer.style.zIndex = '-1';
+            document.body.appendChild(particlesContainer);
+
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = '4px';
+                particle.style.height = '4px';
+                particle.style.background = `linear-gradient(45deg, #4a5568, #2b6cb0, #2d3748)`;
+                particle.style.borderRadius = '50%';
+                particle.style.opacity = '0.3';
+                
+                // Random position
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                
+                // Random animation
+                particle.style.animation = `float ${3 + Math.random() * 2}s ease-in-out infinite ${Math.random() * 2}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Initialize particles
+        createParticles();
+
+        // Add mouse move effect to hero section
+        document.addEventListener('mousemove', function(e) {
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                hero.style.background = `
+                    linear-gradient(135deg, #1a2332 0%, #2d3748 100%),
+                    radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(246, 173, 85, 0.1) 0%, transparent 50%)
+                `;
+            }
+        });
+
+        // Enhanced scroll progress indicator
+        function createScrollProgress() {
+            const progressBar = document.createElement('div');
+            progressBar.style.position = 'fixed';
+            progressBar.style.top = '0';
+            progressBar.style.left = '0';
+            progressBar.style.width = '0%';
+            progressBar.style.height = '3px';
+            progressBar.style.background = 'linear-gradient(90deg, #4a5568, #2b6cb0, #2d3748)';
+            progressBar.style.zIndex = '9999';
+            progressBar.style.transition = 'width 0.1s ease';
+            document.body.appendChild(progressBar);
+
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset;
+                const docHeight = document.body.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                progressBar.style.width = scrollPercent + '%';
+            });
+        }
+
+        // Initialize scroll progress
+        createScrollProgress();
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Counter animation for statistics (if needed)
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    element.textContent = Math.floor(start);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            }
+            updateCounter();
+        }
+
+        // Mobile menu toggle (for future enhancement)
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Add mobile menu styles
+        const mobileStyles = `
+            @media (max-width: 768px) {
+                .nav-links {
+                    position: fixed;
+                    top: 70px;
+                    right: -100%;
+                    width: 100%;
+                    height: calc(100vh - 70px);
+                    background: rgba(15, 20, 25, 0.95);
+                    backdrop-filter: blur(10px);
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding-top: 50px;
+                    transition: right 0.3s ease;
+                }
+                
+                .nav-links.active {
+                    right: 0;
+                }
+                
+                .nav-links li {
+                    margin: 20px 0;
+                }
+                
+                .nav-links a {
+                    font-size: 1.2rem;
+                }
+            }
+        `;
+        
+        const mobileStyleSheet = document.createElement('style');
+        mobileStyleSheet.textContent = mobileStyles;
+        document.head.appendChild(mobileStyleSheet);
+    </script>
+</body>
+</html>
